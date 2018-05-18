@@ -1,6 +1,7 @@
 #! /bin/bash
-# Script gemaakt door: Jop Bakker - 359423 voor de les Linux Services aan de Hanzehogeschool Groningen.
-# Script om de Linux-Services repo te downloaden, pullen of pushen
+#Script gemaakt door: Jop Bakker - 359423 voor de les Linux Services aan de Hanzehogeschool Groningen.
+#Script om de Linux-Services repo te downloaden, pullen of pushen
+#Functions can be called from CLI: ./<scriptname> <functionname>
 
 #Download the Linux-Services repo
 download () {
