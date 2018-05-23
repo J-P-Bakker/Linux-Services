@@ -1,5 +1,5 @@
-voornaam=
-achternaam=
-straat=
-huisnummer=
-postcode=
+voornaam=Jop
+achternaam=Bakker
+straat=Geheim
+huisnummer=3
+postcode=Geheim
