@@ -7,12 +7,21 @@ read -p "Sorteren op WEEK of MAAND: " FOTO_SORTEREN
 
 while [ "$FOTO_SORTEREN" != "WEEK" ] && [ "$FOTO_SORTEREN" != "MAAND" ]
 do
-	echo "Verkeerde parameter voor sorteren"
-        read -p "Wilt u verder gaan? [y/n]: " DOORGAAN_KEUZE
-	if [ "$DOORGAAN_KEUZE" = "n" ]; then
-		exit
-	else
-		read -p "Sorteren op WEEK of MAAND: " FOTO_SORTEREN
-	fi
+	echo "Er is geen correcte sorteer methode gekozen"
+	while [ "$DOORGAAN_KEUZE" != "n" ] && [ "$DOORGAAN_KEUZE" != "y" ]
+    do
+    	read -p "Wilt u verder gaan? [y/n]: " DOORGAAN_KEUZE
+
+		if [ "$DOORGAAN_KEUZE" = "n" ]; then
+			exit
+		elif [ "$DOORGAAN_KEUZE" = "y" ]; then
+			:
+		else
+			echo "Geen geldige optie was gekozen"
+		fi
+	done
+	DOORGAAN_KEUZE='NULL'
+	read -p "Sorteren op WEEK of MAAND: " FOTO_SORTEREN
 done
+
 echo "We gaan de foto's uit de map: $FOTO_LOCATIE sorteren op $FOTO_SORTEREN"
