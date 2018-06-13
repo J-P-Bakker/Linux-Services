@@ -52,7 +52,9 @@ else
 		sudo service salt-minion stop
 		read -p "Naam van minion: " MINION_NAME
 		sleep 1
-		sudo bash -c 'echo "$MINION_NAME" > /etc/salt/minion_id'
+		sudo rm -rf /etc/salt/minion_id
+		sudo touch /etc/salt/minion_id && sudo chmod 777 /etc/salt/minion_id
+		sudo printf "$MINION_NAME" > /etc/salt/minion_id
 		sudo service salt-minion start
 fi
 echo "-------------------------------------------------------------------------------------"
