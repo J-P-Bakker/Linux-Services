@@ -33,5 +33,7 @@ else
 		curl -L https://bootstrap.saltstack.com -o install_salt.sh
 		sudo sh install_salt.sh -A $MASTER_IP
 fi
+echo "-------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------------"
 echo "Salt has been installed"
 
