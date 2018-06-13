@@ -27,13 +27,31 @@ if [ "$SALT_TYPE" = "Master" ]; then
 	#install master
 		curl -L https://bootstrap.saltstack.com -o install_salt.sh
 		sudo sh install_salt.sh -M
+
+		#Toevoegen minions
+		read -p "Wilt u ALLE minions toevoegen? [y/n]: " DOORGAAN_KEUZE
+		while [ "$DOORGAAN_KEUZE" != "n" ] && [ "$DOORGAAN_KEUZE" != "y" ]
+	    do
+	    	read -p "Wilt u verder gaan? [y/n]: " DOORGAAN_KEUZE
+
+			if [ "$DOORGAAN_KEUZE" = "n" ]; then
+				exit
+			elif [ "$DOORGAAN_KEUZE" = "y" ]; then
+				:
+			else
+				echo "Geen geldige optie was gekozen"
+			fi
+		done
+		DOORGAAN_KEUZE='NULL'
+		sudo salt-key --accept-all
 else
 	#install minion
-		read -p "IP van de master" MASTER_IP
+		read -p "IP van de master: " MASTER_IP
 		curl -L https://bootstrap.saltstack.com -o install_salt.sh
 		sudo sh install_salt.sh -A $MASTER_IP
+		read -p "Naam van minion: " MINION_NAME
+		sudo bash -c 'echo "$MINION_NAME" > /etc/salt/minion_id'
 fi
 echo "-------------------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------------------"
 echo "Salt has been installed"
-
