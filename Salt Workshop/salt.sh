@@ -55,7 +55,7 @@ if [ "$SALT_TYPE" = "Master" ]; then
 		sudo printf "$MINION_NAME" > /etc/salt/minion_id
 		sudo service salt-minion start
 	else
-
+		echo ""
 	fi
 	DOORGAAN_KEUZE='NULL'
 	#Toevoegen minions
@@ -75,7 +75,7 @@ if [ "$SALT_TYPE" = "Master" ]; then
 	if [ "$DOORGAAN_KEUZE" = "y" ]; then
 		salt-key --accept-all
 	else
-	
+		echo ""
 	fi
 	DOORGAAN_KEUZE='NULL'
 else
