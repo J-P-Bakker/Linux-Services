@@ -51,6 +51,7 @@ else
 		sudo sh install_salt.sh -A $MASTER_IP
 		sudo service salt-minion stop
 		read -p "Naam van minion: " MINION_NAME
+		sleep 1
 		sudo bash -c 'echo "$MINION_NAME" > /etc/salt/minion_id'
 		sudo service salt-minion start
 fi
