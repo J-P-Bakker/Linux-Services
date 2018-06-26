@@ -17,6 +17,7 @@ docker-ce:
     - pkgrepo: docker_prerequisites
     - pkg: docker_prerequisites
   service.running:
+    - name: docker
     - enable: True
     - restart: True
   {% if salt['pillar.get']('docker-systemd:servicefile') is defined %}
