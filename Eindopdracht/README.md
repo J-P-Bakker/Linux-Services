@@ -1,4 +1,4 @@
-# Linux-Services
+# Eindopdracht
 
 Scripts gemaakt door Jop Bakker (359423) voor de eindopdracht van Linux-Services
 
