@@ -25,7 +25,7 @@ docker-ce:
     - source: {{ salt['pillar.get']('docker-systemd:servicefile') }}
   {% endif %}
 
-Run script:
+docker version check:
  cmd:
  - run
  - name: "docker -v"

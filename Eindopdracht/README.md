@@ -18,13 +18,21 @@ Nagios client installeren:
 	stap 3: Done
 ```
 
+```
+Docker (master) installeren:
+	Stap 1 (Master): run docker.sls for minion (master) x
+	stap 2: Done
+```
+
 
 
 
 
 ### Sources:
 ```
-Voor het docker.sls bestand is gebruik gemaakt van: https://git.osso.nl/salt/docker-systemd-formula/commit/b1cc8ffc12b08ab3f28740538a0f0eeb27aa0f38?view=parallel
+Voor het docker.sls bestand is gebruik gemaakt van:
+https://git.osso.nl/salt/docker-systemd-formula/commit/b1cc8ffc12b08ab3f28740538a0f0eeb27aa0f38?view=parallel
+
 
 
 ```
