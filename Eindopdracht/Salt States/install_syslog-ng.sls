@@ -4,7 +4,7 @@ install_syslog_server:
       - syslog-ng
       - syslog-ng-core
 
-run install_nagios_server:
+create firewall_config:
  cmd:
  - run
  - name: /home/jbakker/Linux-Services/Eindopdracht/syslog-ng-firewall_config.sh
