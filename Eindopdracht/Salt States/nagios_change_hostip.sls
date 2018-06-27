@@ -5,6 +5,6 @@ uncomment line:
 
 replace line:
  file.replace:
-  - name: /etc/nagios/nrpe.cfg
+  - name: /home/jbakker/test.txt
   - pattern: server_address=
-  - repl: server_address=10.0.0.11
+  - repl: server_address={{ grains['ip_interfaces']['eth0'][0] }}
