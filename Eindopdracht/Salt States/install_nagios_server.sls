@@ -8,8 +8,8 @@ uncomment line:
  - name: /usr/local/nagios/etc/nagios.cfg
  - regex: cfg_dir=/usr/local/nagios/etc/servers
 
- restart nagios:
-  service.running:
-    - name: nagios
-    - enable: True
-    - restart: True
+restart nagios:
+ service.running:
+ - name: nagios
+ - enable: True
+ - restart: True
