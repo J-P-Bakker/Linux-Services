@@ -31,10 +31,10 @@ Nagios client installeren:
 ```
 Nagios client toevoegen:
 	Stap 1 (Master): run nagios_add_client.sh (for each client)
-	Stap 2 (Master): Check config
-		usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
-	Stap 3 (Master): Restart
+	Stap 2 (Master): Restart
 		sudo systemctl restart nagios
+	Stap 3 (Master): Check added hosts
+		usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 	stap 4: Done
 ```
 
