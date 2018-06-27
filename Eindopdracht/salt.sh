@@ -28,6 +28,11 @@ if [ "$SALT_TYPE" = "Master" ]; then
 	curl -L https://bootstrap.saltstack.com -o install_salt.sh
 	sudo sh install_salt.sh -M
 
+	#Move Salt States to Salt folder
+	cd "/home/jbakker//Linux-Services/Eindopdracht/Salt States/"
+	sudo cp * /srv/salt/
+	cd /home/jbakker/
+
 	#Master as minion
 	read -p "Wilt u de master als minion? [y/n]: " DOORGAAN_KEUZE
 	while [ "$DOORGAAN_KEUZE" != "n" ] && [ "$DOORGAAN_KEUZE" != "y" ]
@@ -94,4 +99,4 @@ else
 fi
 echo "-------------------------------------------------------------------------------------"
 echo "-------------------------------------------------------------------------------------"
-echo "Salt has been installed"
+echo "Salt has been installed and configured"
