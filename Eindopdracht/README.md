@@ -29,6 +29,16 @@ Nagios client installeren:
 ```
 
 ```
+Nagios client toevoegen:
+	Stap 1 (Master): run nagios_add_client.sh (for each client)
+	Stap 2 (Master): Check config
+		usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+	Stap 3 (Master): Restart
+		sudo systemctl restart nagios
+	stap 4: Done
+```
+
+```
 Docker (master) installeren:
 	Stap 1 (Master): run docker.sls for minion (master) x
 		sudo salt '*master' state.apply -t 500 docker
