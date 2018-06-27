@@ -60,7 +60,7 @@ Syslog-ng (minion) installeren:
 
 ### Sources:
 ```
-Voor het docker.sls bestand is gebruik gemaakt van:
+docker.sls:
 https://git.osso.nl/salt/docker-systemd-formula/commit/b1cc8ffc12b08ab3f28740538a0f0eeb27aa0f38?view=parallel
 
 
