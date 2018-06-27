@@ -4,23 +4,27 @@ Scripts gemaakt door Jop Bakker (359423) voor de eindopdracht van Linux-Services
 
 ### Stappenplan:
 ```
+Salt installeren op clients:
+	sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Salt Workshop" && sudo chmod +x salt.sh && sudo ./salt.sh
+
+Salt installeren op master:
+	sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Salt Workshop" && sudo chmod +x salt.sh && sudo ./salt.sh
+```
+
+```
 Nagios monitor server installeren:
-	Stap 1 (minion): install salt
-		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Salt Workshop" && sudo chmod +x salt.sh && sudo ./salt.sh
-	Stap 2 (master): Add minion to salt master
+	Stap 1 (master): Add master to salt master
 		sudo salt-key -a <hostname>
-	Stap 3 (master): Run install_nagios_server.sls for minion x
+	Stap 2 (master): Run install_nagios_server.sls for (master) x
 		sudo salt '<hostname>' state.apply -t 1200 install_nagios_server
-	stap 4: Done
+	stap 3: Done
 ```
 
 ```
 Nagios client installeren:
 	Stap 1 (Master): run install_nagios_client.sls for minion x
 		sudo salt '<hostname>' state.apply -t 999 install_nagios_client
-	Stap 2 (master): run nagios_change_hostip.sls
-		sudo salt '<hostname>' state.apply nagios_change_hostip
-	stap 3: Done
+	stap 2: Done
 ```
 
 ```
@@ -29,10 +33,6 @@ Docker (master) installeren:
 		sudo salt '<hostname>' state.apply -t 500 docker
 	stap 2: Done
 ```
-
-
-
-
 
 ### Sources:
 ```
