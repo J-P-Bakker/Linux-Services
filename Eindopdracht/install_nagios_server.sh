@@ -6,18 +6,16 @@ sudo apt-get install -y autoconf gcc libc6 make wget unzip apache2 php libapache
 
 #Adding user and group
 sudo useradd nagios
-sudo groupadd nagcmd
-sudo usermod -a -G nagcmd nagios
-sudo usermod -a -G nagios,nagcmd www-data
+sudo usermod -a -G nagios www-data
 
 #Downloading Nagios core
-sudo wget -O /tmp/nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.3.4.tar.gz
+wget -q -O /tmp/nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.3.4.tar.gz
 cd /tmp
-sudo tar -xzf nagioscore.tar.gz
+tar -xzf nagioscore.tar.gz >/dev/null 2>&1
 
 
 #Compiling Nagios
-cd nagioscore-nagios-4.3.4/
+cd /tmp/nagioscore-nagios-4.3.4/
 sudo ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 sudo make all
 
@@ -44,10 +42,13 @@ sudo systemctl restart apache2
 sudo systemctl start nagios
 
 #Nagios plugin
-cd /tmp
+sudo apt-get install -y -q autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext
 wget --no-check-certificate -O /tmp/nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
+cd /tmp
+
 tar zxf nagios-plugins.tar.gz
 cd /tmp/nagios-plugins-release-2.2.1/
+
 sudo ./tools/setup
 sudo ./configure
 sudo make
@@ -64,10 +65,15 @@ sudo make check_nrpe
 sudo make install-plugin
 
 #Finnished installing
-
+echo "-------------------------------------------------------------------------------------"
+echo "Nagios has been installed and configured"
+echo "-------------------------------------------------------------------------------------"
 #Remove nagios tar files
-sudo rm -rf nagios*.tar.gz
-sudo rm -rf nrpe*.tar.gz
+sudo rm -rf /tmp/nagios*.tar.gz
+sudo rm -rf /tmp/nrpe*.tar.gz
 
 #Creating nagios servers folder
 sudo mkdir -p /usr/local/nagios/etc/servers
+echo "-------------------------------------------------------------------------------------"
+echo "Finished removeing old files"
+echo "-------------------------------------------------------------------------------------"

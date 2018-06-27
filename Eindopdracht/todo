@@ -10,10 +10,10 @@ todo:
 
 		(To enable, set file_recv to True in the master configuration file, and restart the master. (sudo nano /etc/salt/master))
 	
-
+nagios server
 
 Werkt:
 	salt install (minion en master)
 	nagios client
-	nagios server
+	
 	Docker install
