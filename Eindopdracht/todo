@@ -1,14 +1,6 @@
 todo:
 	Git etc verwijderen na install
-	Alles in 1 groot script
-
-	nagios client:
-		<hostname>.cfg aanmaken met local IP en dan met salt naar master zetten
-
-		Haalt het bestand van de minion en zet hem in de cache op de master.
-			sudo salt '*minion' cp.push /home/jbakker/test.txt
-
-		(To enable, set file_recv to True in the master configuration file, and restart the master. (sudo nano /etc/salt/master))
+	Alles in 1 groot script?
 
 	syslog-ng "client"
 
