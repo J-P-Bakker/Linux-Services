@@ -35,7 +35,7 @@ if [ "$SALT_TYPE" = "Master" ]; then
 	
 	#Move Salt States to Salt folder
 	sudo mkdir /srv/salt
-	cd "/home/jbakker//Linux-Services/Eindopdracht/Salt States/"
+	cd "/home/jbakker/Linux-Services/Eindopdracht/Salt States/"
 	sudo cp * /srv/salt/
 	cd /home/jbakker/
 	echo "-------------------------------------------------------------------------------------"
