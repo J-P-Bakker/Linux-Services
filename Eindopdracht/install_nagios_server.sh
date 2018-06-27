@@ -11,8 +11,8 @@ sudo usermod -a -G nagcmd nagios
 sudo usermod -a -G nagios,nagcmd www-data
 
 #Downloading Nagios core
-cd ~
-sudo wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.3.4.tar.gz
+sudo wget -O /tmp/nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.3.4.tar.gz
+cd /tmp
 sudo tar -xzf nagioscore.tar.gz
 
 
@@ -44,10 +44,10 @@ sudo systemctl restart apache2
 sudo systemctl start nagios
 
 #Nagios plugin
-cd ~
-wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
+cd /tmp
+wget --no-check-certificate -O /tmp/nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
 tar zxf nagios-plugins.tar.gz
-cd /home/jbakker/nagios-plugins-release-2.2.1/
+cd /tmp/nagios-plugins-release-2.2.1/
 sudo ./tools/setup
 sudo ./configure
 sudo make
@@ -55,10 +55,10 @@ sudo make install
 sudo systemctl restart nagios
 
 #Installeing NRPE
-cd ~
+cd /tmp
 wget https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-3.2.1/nrpe-3.2.1.tar.gz 
 tar zxf nrpe-*
-cd /home/jbakker/nrpe-*
+cd /tmp/nrpe-*
 sudo ./configure
 sudo make check_nrpe
 sudo make install-plugin
