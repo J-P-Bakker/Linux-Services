@@ -1,7 +1,6 @@
 todo:
 	Git etc verwijderen na install
-	nagios tarz verwijderen
-
+	Alles in 1 groot script
 
 	nagios client:
 		<hostname>.cfg aanmaken met local IP en dan met salt naar master zetten
