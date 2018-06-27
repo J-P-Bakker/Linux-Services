@@ -43,6 +43,7 @@ sudo systemctl start nagios
 
 echo "-------------------------------------------------------------------------------------"
 echo "Nagios has been installed and configured"
+echo "Installing nagios plugins"
 echo "-------------------------------------------------------------------------------------"
 
 #Nagios plugin
@@ -79,5 +80,5 @@ sudo rm -rf /tmp/nrpe*.tar.gz
 #Creating nagios servers folder
 sudo mkdir -p /usr/local/nagios/etc/servers
 echo "-------------------------------------------------------------------------------------"
-echo "Finished removeing old files"
+echo "Finished removing old files"
 echo "-------------------------------------------------------------------------------------"
