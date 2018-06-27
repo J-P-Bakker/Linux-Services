@@ -35,7 +35,7 @@ sudo a2enmod cgi
 sudo ufw allow apache
 
 #Add nagios webuser and set password (For easy use the password is "Hardcoded")
-sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin Welkom123
+sudo htpasswd -c -b /usr/local/nagios/etc/htpasswd.users nagiosadmin Welkom123
 
 #Nagios plugin
 cd ~
