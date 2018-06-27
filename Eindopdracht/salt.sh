@@ -100,6 +100,10 @@ if [ "$SALT_TYPE" = "Master" ]; then
 		echo ""
 	fi
 	DOORGAAN_KEUZE='NULL'
+	echo "-------------------------------------------------------------------------------------"
+	echo "Salt Master has been installed and configured"
+	echo "-------------------------------------------------------------------------------------"
+
 else
 	#install minion
 	read -p "IP van de master: " MASTER_IP
@@ -114,10 +118,7 @@ else
 	sudo printf "$MINION_NAME" > /etc/salt/minion_id
 	sudo service salt-minion start
 	echo "-------------------------------------------------------------------------------------"
-	echo "Salt Minion has been installed"
+	echo "Salt Minion has been installed and configured"
 	echo "-------------------------------------------------------------------------------------"
 	
 fi
-echo "-------------------------------------------------------------------------------------"
-echo "Salt has been installed and configured"
-echo "-------------------------------------------------------------------------------------"
