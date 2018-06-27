@@ -25,13 +25,23 @@ done
 
 if [ "$SALT_TYPE" = "Master" ]; then
 	#install master
+	cd /home/jbakker/
 	curl -L https://bootstrap.saltstack.com -o install_salt.sh
 	sudo sh install_salt.sh -M
 
+	echo "-------------------------------------------------------------------------------------"
+	echo "Salt Master has been installed"
+	echo "-------------------------------------------------------------------------------------"
+	
 	#Move Salt States to Salt folder
+	sudo mkdir /srv/salt
 	cd "/home/jbakker//Linux-Services/Eindopdracht/Salt States/"
 	sudo cp * /srv/salt/
 	cd /home/jbakker/
+	echo "-------------------------------------------------------------------------------------"
+	echo "Salt States have been moved"
+	echo "-------------------------------------------------------------------------------------"
+	
 
 	#Master as minion
 	read -p "Wilt u de master als minion? [y/n]: " DOORGAAN_KEUZE
@@ -58,6 +68,10 @@ if [ "$SALT_TYPE" = "Master" ]; then
 		sudo touch /etc/salt/minion_id && sudo chmod 777 /etc/salt/minion_id
 		sudo printf "$MINION_NAME" > /etc/salt/minion_id
 		sudo service salt-minion start
+		echo "-------------------------------------------------------------------------------------"
+		echo "Salt Minion has been installed"
+		echo "-------------------------------------------------------------------------------------"
+	
 	else
 		echo ""
 	fi
@@ -78,6 +92,10 @@ if [ "$SALT_TYPE" = "Master" ]; then
 	done
 	if [ "$DOORGAAN_KEUZE" = "y" ]; then
 		salt-key --accept-all
+		echo "-------------------------------------------------------------------------------------"
+		echo "All found minions have been added"
+		echo "-------------------------------------------------------------------------------------"
+	
 	else
 		echo ""
 	fi
@@ -95,7 +113,11 @@ else
 	sudo touch /etc/salt/minion_id && sudo chmod 777 /etc/salt/minion_id
 	sudo printf "$MINION_NAME" > /etc/salt/minion_id
 	sudo service salt-minion start
+	echo "-------------------------------------------------------------------------------------"
+	echo "Salt Minion has been installed"
+	echo "-------------------------------------------------------------------------------------"
+	
 fi
 echo "-------------------------------------------------------------------------------------"
-echo "-------------------------------------------------------------------------------------"
 echo "Salt has been installed and configured"
+echo "-------------------------------------------------------------------------------------"
