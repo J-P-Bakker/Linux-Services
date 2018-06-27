@@ -5,5 +5,5 @@ run install_nagios_server:
 
 uncomment line:
  file.uncomment:
- - name: usr/local/nagios/etc/nagios.cfg
+ - name: /usr/local/nagios/etc/nagios.cfg
  - regex: cfg_dir=/usr/local/nagios/etc/servers
