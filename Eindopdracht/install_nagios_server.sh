@@ -41,6 +41,10 @@ sudo htpasswd -c -b /usr/local/nagios/etc/htpasswd.users nagiosadmin Welkom123
 sudo systemctl restart apache2
 sudo systemctl start nagios
 
+echo "-------------------------------------------------------------------------------------"
+echo "Nagios has been installed and configured"
+echo "-------------------------------------------------------------------------------------"
+
 #Nagios plugin
 sudo apt-get install -y -q autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext
 wget --no-check-certificate -O /tmp/nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
@@ -66,7 +70,7 @@ sudo make install-plugin
 
 #Finnished installing
 echo "-------------------------------------------------------------------------------------"
-echo "Nagios has been installed and configured"
+echo "Nagios plugins have been installed and configured"
 echo "-------------------------------------------------------------------------------------"
 #Remove nagios tar files
 sudo rm -rf /tmp/nagios*.tar.gz
