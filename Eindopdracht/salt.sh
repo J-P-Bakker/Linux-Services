@@ -91,6 +91,7 @@ if [ "$SALT_TYPE" = "Master" ]; then
 		fi
 	done
 	if [ "$DOORGAAN_KEUZE" = "y" ]; then
+		sleep 10
 		salt-key --accept-all
 		echo "-------------------------------------------------------------------------------------"
 		echo "All found minions have been added"

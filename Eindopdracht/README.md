@@ -10,7 +10,7 @@ SALT:
 
 	Salt installeren op master:
 		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
-	Add minions to master:
+	Add minions to master (als dit niet tijdens de install is gedaan):
 		sudo salt-key -A
 ```
 
