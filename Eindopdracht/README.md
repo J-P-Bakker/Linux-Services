@@ -6,10 +6,10 @@ Scripts gemaakt door Jop Bakker (359423) voor de eindopdracht van Linux-Services
 ```
 SALT:
 	Salt installeren op clients:
-		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Salt Workshop" && sudo chmod +x salt.sh && sudo ./salt.sh
+		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
 
 	Salt installeren op master:
-		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Salt Workshop" && sudo chmod +x salt.sh && sudo ./salt.sh
+		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
 	Add minions to master:
 		sudo salt-key -A
 ```
