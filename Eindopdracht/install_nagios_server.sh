@@ -20,11 +20,13 @@ sudo tar -xzf nagioscore.tar.gz
 cd nagioscore-nagios-4.3.4/
 sudo ./configure --with-httpd-conf=/etc/apache2/sites-enabled
 sudo make all
+
 sudo make install
 sudo make install-init
+sudo update-rc.d Nagios defaults
 sudo make install-commandmode
 sudo make install-config
-sudo update-rc.d Nagios defaults
+
 
 #Updating apache en add Nagios
 sudo make install-webconf
@@ -37,11 +39,15 @@ sudo ufw allow apache
 #Add nagios webuser and set password (For easy use the password is "Hardcoded")
 sudo htpasswd -c -b /usr/local/nagios/etc/htpasswd.users nagiosadmin Welkom123
 
+#Restart services
+sudo systemctl restart apache2
+sudo systemctl start nagios
+
 #Nagios plugin
 cd ~
 wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
 tar zxf nagios-plugins.tar.gz
-cd nagios-plugins-release-2.2.1/
+cd /home/jbakker/nagios-plugins-release-2.2.1/
 sudo ./tools/setup
 sudo ./configure
 sudo make
@@ -52,7 +58,7 @@ sudo systemctl restart nagios
 cd ~
 wget https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-3.2.1/nrpe-3.2.1.tar.gz 
 tar zxf nrpe-*
-cd nrpe-*
+cd /home/jbakker/nrpe-*
 sudo ./configure
 sudo make check_nrpe
 sudo make install-plugin
