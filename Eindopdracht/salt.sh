@@ -49,7 +49,6 @@ if [ "$SALT_TYPE" = "Master" ]; then
 	done
 	if [ "$DOORGAAN_KEUZE" = "y" ]; then
 		read -p "IP van de master: " MASTER_IP
-		curl -L https://bootstrap.saltstack.com -o install_salt.sh
 		sudo sh install_salt.sh -A $MASTER_IP
 		#Naam van minion veranderen
 		sudo service salt-minion stop
