@@ -11,8 +11,8 @@ uncomment line:
 
 replace line:
  file.replace:
-  - name: /home/jbakker/test.txt
-  - pattern: server_address=
+  - name: /etc/nagios/nrpe.cfg
+  - pattern: server_address=127.0.0.1
   - repl: server_address={{ grains['ip_interfaces']['eth0'][0] }}
 
 restart nrpe:
