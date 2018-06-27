@@ -6,6 +6,9 @@ Scripts gemaakt door Jop Bakker (359423) voor de eindopdracht van Linux-Services
 #### Stap 1:
 ```
 SALT:
+	Master:
+		Check IP
+		
 	Salt installeren op clients:
 		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
 
