@@ -1,7 +1,7 @@
 run install_nagios_server:
  cmd:
  - run
- - name: /home/jbakker/install_nagios_server.sh
+ - name: /home/jbakker/Linux-Services/Eindopdracht/install_nagios_server.sh
 
 uncomment line:
  file.uncomment:
