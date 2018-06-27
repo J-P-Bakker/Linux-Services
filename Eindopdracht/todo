@@ -2,8 +2,6 @@ todo:
 	Git etc verwijderen na install
 	nagios tarz verwijderen
 
-	Salt master:
-		.sls files van de git locatie verplaatsen naar /srv/salt
 
 	nagios client:
 		<hostname>.cfg aanmaken met local IP en dan met salt naar master zetten

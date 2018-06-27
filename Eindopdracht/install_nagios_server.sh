@@ -58,5 +58,10 @@ sudo make check_nrpe
 sudo make install-plugin
 
 #Finnished installing
+
+#Remove nagios tar files
+sudo rm -rf nagios*.tar.gz
+sudo rm -rf nrpe*.tar.gz
+
 #Creating nagios servers folder
 sudo mkdir -p /usr/local/nagios/etc/servers
