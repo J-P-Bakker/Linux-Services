@@ -35,6 +35,18 @@ Docker (master) installeren:
 	stap 2: Done
 ```
 
+```
+Syslog-ng (master) installeren:
+	Stap 1 (Master): run install_syslog-ng.sls for master
+		sudo salt '*master' state.apply -t 500 install_syslog-ng
+	stap 2: Done
+```
+
+```
+Syslog-ng (minion) installeren:
+	Stap 1 (): 
+```
+
 ### Sources:
 ```
 Voor het docker.sls bestand is gebruik gemaakt van:

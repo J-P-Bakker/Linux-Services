@@ -9,11 +9,14 @@ todo:
 			sudo salt '*minion' cp.push /home/jbakker/test.txt
 
 		(To enable, set file_recv to True in the master configuration file, and restart the master. (sudo nano /etc/salt/master))
-	
-nagios server
+
+	syslog-ng "client"
+
 
 Werkt:
 	salt install (minion en master)
 	nagios client
-	
+	nagios server
 	Docker install
+	syslog-ng "server"
+
