@@ -1,9 +1,6 @@
 todo:
 	Git etc verwijderen na install
-	Alles in 1 groot script?
-
-	syslog-ng "client"
-
+	Alles in 1 groot script? (TOP file)
 
 Werkt:
 	salt install (minion en master)
@@ -11,4 +8,4 @@ Werkt:
 	nagios server
 	Docker install
 	syslog-ng "server"
-
+	syslog-ng "client"
