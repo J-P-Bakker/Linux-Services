@@ -2,9 +2,45 @@
 
 Scripts gemaakt door Jop Bakker (359423) voor de eindopdracht van Linux-Services
 
-Doormiddel van de top.sls *zou* alles in een keer geïnstalleerd moeten kunnen worden (dit is niet getest). Wel moet handmatig het nagios_add_client script worden uitgevoerd.
-
 ### Stappenplan:
+
+### Semi-automatisch
+#### Stap 1:
+```
+IP check
+	Check van elke server het ip adres en schrijf deze op.
+```
+
+#### Stap 2:
+```
+SALT:		
+	Salt installeren op clients:
+		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
+
+	Salt installeren op master:
+		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
+	Add minions to master (als dit niet tijdens de installatie is gedaan):
+		sudo salt-key -A
+```
+
+#### Stap 3:
+```
+Nagios client toevoegen:
+	Stap 1 (Master): run nagios_add_client.sh (for each client)
+		sudo sh /home/jbakker/Linux-Services/Eindopdracht/nagios_add_client.sh
+	Stap 2 (Master): Restart
+		sudo systemctl restart nagios
+```
+
+#### Stap 4:
+```
+Salt State file aanroepen:
+	Stap 1 (master): Run 
+		sudo salt '*' state.apply top
+	stap 2: Done
+```
+
+### Handmatig:
 #### Stap 1:
 ```
 IP check
