@@ -15,7 +15,12 @@ copy syslog-ng.conf:
  - source: /home/jbakker/Linux-Services/Eindopdracht/Config/syslog-ng_server.conf
  - force: True
 
+Create logs file:
+ file.touch:
+ - name: /var/log/syslog-ng/logs.txt
+ - makedirs: True
+
 restart syslog-ng:
  cmd:
  - run
-- name: systemctl restart syslog-ng
+ - name: systemctl restart syslog-ng
