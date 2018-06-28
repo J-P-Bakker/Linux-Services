@@ -1,5 +1,5 @@
 #!/bin/sh
-#Adding syslog-ng config
+#Adding syslog-ng firewall config
 
 cd /etc/syslog-ng/conf.d/
 sudo cat > firewalls.conf << EOF
