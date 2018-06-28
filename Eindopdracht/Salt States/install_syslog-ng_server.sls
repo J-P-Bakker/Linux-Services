@@ -9,6 +9,12 @@ create firewall_config:
  - run
  - name: /home/jbakker/Linux-Services/Eindopdracht/syslog-ng-firewall_config.sh
 
+back-up old config:
+ file.copy:
+ - name: /etc/syslog-ng/syslog-ng.conf.BAK
+ - source: /etc/syslog-ng/syslog-ng.conf
+ - force: True
+
 copy syslog-ng.conf:
  file.copy:
  - name: /etc/syslog-ng/syslog-ng.conf

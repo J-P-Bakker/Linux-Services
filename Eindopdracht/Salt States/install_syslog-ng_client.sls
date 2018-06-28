@@ -4,6 +4,12 @@ install_syslog-ng:
       - syslog-ng
       - syslog-ng-core
 
+back-up old config:
+ file.copy:
+ - name: /etc/syslog-ng/syslog-ng.conf.BAK
+ - source: /etc/syslog-ng/syslog-ng.conf
+ - force: True
+
 copy syslog-ng.conf:
  file.copy:
  - name: /etc/syslog-ng/syslog-ng.conf
