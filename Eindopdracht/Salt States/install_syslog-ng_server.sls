@@ -1,4 +1,4 @@
-install_syslog_server:
+install_syslog-ng:
   pkg.installed:
     - pkgs:
       - syslog-ng
