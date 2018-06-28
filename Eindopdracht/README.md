@@ -2,6 +2,8 @@
 
 Scripts gemaakt door Jop Bakker (359423) voor de eindopdracht van Linux-Services
 
+Doormiddel van de top.sls *zou* alles in een keer geïnstalleerd moeten kunnen worden (dit is niet getest). Wel moet handmatig het nagios_add_client script worden uitgevoerd.
+
 ### Stappenplan:
 #### Stap 1:
 ```
@@ -35,6 +37,7 @@ Nagios client installeren:
 ```
 Nagios client toevoegen:
 	Stap 1 (Master): run nagios_add_client.sh (for each client)
+		sudo sh /home/jbakker/Linux-Services/Eindopdracht/nagios_add_client.sh
 	Stap 2 (Master): Restart
 		sudo systemctl restart nagios
 	Stap 3 (Master): Check added hosts
@@ -67,15 +70,12 @@ Syslog-ng (minion) installeren:
 
 ### Sources:
 ```
-docker.sls:
-https://git.osso.nl/salt/docker-systemd-formula/commit/b1cc8ffc12b08ab3f28740538a0f0eeb27aa0f38?view=parallel
+[docker.sls](https://git.osso.nl/salt/docker-systemd-formula/commit/b1cc8ffc12b08ab3f28740538a0f0eeb27aa0f38?view=parallel "Docker.sls source")
 ```
 
 ### Guides:
 ```
-Nagios:
-https://www.howtoforge.com/tutorial/ubuntu-nagios/
+[Nagios](https://www.howtoforge.com/tutorial/ubuntu-nagios/ "Nagios guide")
 
-Syslog-ng:
-https://www.techrepublic.com/article/how-to-use-syslog-ng-to-collect-logs-from-remote-linux-machines/
+[Syslog-ng](https://www.techrepublic.com/article/how-to-use-syslog-ng-to-collect-logs-from-remote-linux-machines/ "Syslog-ng guide")
 ```
