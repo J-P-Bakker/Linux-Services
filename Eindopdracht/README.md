@@ -7,10 +7,12 @@ Doormiddel van de top.sls *zou* alles in een keer geïnstalleerd moeten kunnen w
 ### Stappenplan:
 #### Stap 1:
 ```
-SALT:
-	Master:
-		Check IP
-		
+IP check
+	Check van elke server het ip adres en schrijf deze op.
+```
+#### Stap 2:
+```
+SALT:		
 	Salt installeren op clients:
 		sudo apt install git-core -y && git clone https://github.com/J-P-Bakker/Linux-Services.git && cd "Linux-Services/Eindopdracht" && sudo chmod +x salt.sh && sudo ./salt.sh
 
@@ -19,21 +21,21 @@ SALT:
 	Add minions to master (als dit niet tijdens de installatie is gedaan):
 		sudo salt-key -A
 ```
-#### Stap 2:
+#### Stap 3:
 ```
 Nagios monitor server installeren:
 	Stap 1 (master): Run install_nagios_server.sls for (master) x
 		sudo salt '*master' state.apply -t 1200 install_nagios_server
 	stap 2: Done
 ```
-#### Stap 3:
+#### Stap 4:
 ```
 Nagios client installeren:
 	Stap 1 (Master): run install_nagios_client.sls for minion x
 		sudo salt '*minion*' state.apply -t 999 install_nagios_client
 	stap 2: Done
 ```
-#### Stap 4:
+#### Stap 5:
 ```
 Nagios client toevoegen:
 	Stap 1 (Master): run nagios_add_client.sh (for each client)
@@ -44,21 +46,21 @@ Nagios client toevoegen:
 		usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
 	stap 4: Done
 ```
-#### Stap 5:
+#### Stap 6:
 ```
 Docker (master) installeren:
 	Stap 1 (Master): run docker.sls for minion (master) x
 		sudo salt '*master' state.apply -t 500 docker
 	stap 2: Done
 ```
-#### Stap 6:
+#### Stap 7:
 ```
 Syslog-ng (master) installeren:
 	Stap 1 (Master): run install_syslog-ng.sls for master
 		sudo salt '*master' state.apply -t 500 install_syslog-ng_server
 	stap 2: Done
 ```
-#### Stap 7:
+#### Stap 8:
 ```
 Syslog-ng (minion) installeren:
 	Stap 1 (Master): Run client installer for client x
