@@ -1,6 +1,9 @@
 base:
- '*master'
- - 
+ '*master':
+  - install_nagios_server
+  - docker
+  - install_syslog-ng_server
 
- '*minion*'
- - 
+ '*minion*':
+  - install_nagios_client
+  - install_syslog-ng_client

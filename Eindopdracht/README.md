@@ -69,9 +69,6 @@ Syslog-ng (minion) installeren:
 ```
 docker.sls:
 https://git.osso.nl/salt/docker-systemd-formula/commit/b1cc8ffc12b08ab3f28740538a0f0eeb27aa0f38?view=parallel
-
-
-
 ```
 
 ### Guides:
@@ -81,5 +78,4 @@ https://www.howtoforge.com/tutorial/ubuntu-nagios/
 
 Syslog-ng:
 https://www.techrepublic.com/article/how-to-use-syslog-ng-to-collect-logs-from-remote-linux-machines/
-
 ```
