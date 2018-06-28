@@ -1,6 +1,6 @@
 todo:
 	Git etc verwijderen na install
-	Alles in 1 groot script? (TOP file)
+	top.sls (gemaakt, niet getest)
 
 Werkt:
 	salt install (minion en master)

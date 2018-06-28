@@ -6,3 +6,5 @@ base:
  '*minion*':
   - install_nagios_client
   - install_syslog-ng_client
+ '*':
+  - remove_git_files
