@@ -121,5 +121,6 @@ else
 	echo "-------------------------------------------------------------------------------------"
 	echo "Salt Minion has been installed and configured"
 	echo "-------------------------------------------------------------------------------------"
-	
 fi
+
+sudo mv "/home/jbakker/Linux-Services/Eindopdracht/remove_git_files.sh" /home/jbakker/
