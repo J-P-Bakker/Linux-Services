@@ -5,6 +5,6 @@ Werkt:
 	salt install (minion en master)
 	nagios client
 	nagios server
-	Docker install
+	Docker install (server)
 	syslog-ng "server"
 	syslog-ng "client"
