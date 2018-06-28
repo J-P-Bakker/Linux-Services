@@ -1,12 +1,3 @@
-#!/bin/sh
-#Creating syslog-ng server config
-
-sudo mkdir /var/log/syslog-ng
-sudo touch /var/log/syslog-ng/logs.txt
-
-cd /etc/syslog-ng/
-sudo mv syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK
-sudo cat > syslog-ng.conf << EOF
 @version: 3.5
 @include "scl.conf"
 @include "`scl-root`/system/tty10.conf"
@@ -29,4 +20,3 @@ sudo cat > syslog-ng.conf << EOF
             perm(0777)
             ); };
     log { source(s_local); source(s_network); destination(d_logs); };
-EOF
