@@ -25,19 +25,18 @@ SALT:
 
 #### Stap 3:
 ```
+Salt State file aanroepen:
+	Stap 1 (master): Run 
+		sudo salt '*' state.apply top
+```
+
+#### Stap 4:
+```
 Nagios client toevoegen:
 	Stap 1 (Master): run nagios_add_client.sh (for each client)
 		sudo sh /home/jbakker/Linux-Services/Eindopdracht/nagios_add_client.sh
 	Stap 2 (Master): Restart
 		sudo systemctl restart nagios
-```
-
-#### Stap 4:
-```
-Salt State file aanroepen:
-	Stap 1 (master): Run 
-		sudo salt '*' state.apply top
-	stap 2: Done
 ```
 
 ### Handmatig:
